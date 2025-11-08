@@ -13,25 +13,23 @@
   /* ===== GENERAL PAGE STYLING ===== */
   body {
     font-family: 'Montserrat', sans-serif;
-    background: #000; /* Dark background */
-    color: #fff;      /* White text */
+    background: #000;
+    color: #fff;
     margin: 0;
     padding: 0;
     min-height: 100vh;
     position: relative;
   }
-  
+
   .profile-pic {
-  width: 120px;          /* size of the image */
-  height: 120px;
-  border-radius: 50%;    /* makes it circular */
-  object-fit: cover;     /* ensures the image fills the circle */
-  margin-bottom: 1rem;   /* space between image and name */
-  border: 2px solid #fff; /* optional: white border */
-}
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 2px solid #fff;
+  }
 
-
-  /* Each section fills screen and can be hidden */
   section {
     position: absolute;
     top: 0; left: 0;
@@ -44,7 +42,6 @@
     transition: opacity 0.5s ease, visibility 0.5s ease;
   }
 
-  /* Hidden sections (Friends by default) */
   section.hidden {
     opacity: 0;
     visibility: hidden;
@@ -67,127 +64,34 @@
     color: #ccc;
   }
 
-  /* Social links and Friends button */
-  .links a, .friends-btn {
-  display: block;
-  margin: 0.5rem 0;
-  padding: 0.6rem 1.2rem;
-  text-align: center;
-  font-weight: 500;
-  color: #fff;
-  text-decoration: none;
-  background: transparent;
-  border: 1px solid #fff;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
+  /* Buttons + Links */
+  .links a, .friends-btn, .ocs-btn {
+    display: block;
+    margin: 0.5rem 0;
+    padding: 0.6rem 1.2rem;
+    text-align: center;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
 
-  .links a:hover, .friends-btn:hover {
+  .links a:hover, .friends-btn:hover, .ocs-btn:hover {
     background: #fff;
     color: #111;
     transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(255,255,255,0.2);
   }
-  
-  /* ===== OCS SECTION ===== */
-#ocs {
-  justify-content: flex-start;
-  padding-top: 2rem;
-  overflow-y: auto;
-  background: rgba(0, 0, 0, 0.8); /* semi-transparent background */
-}
-
-/* Container that holds all OC cards */
-.ocs-container {
-  width: 90%;
-  max-width: 650px;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  padding-bottom: 5rem;
-}
-
-/* Individual OC card */
-.oc-card {
-  background: rgba(20, 20, 20, 0.85);
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-  border: 1px solid rgba(255,255,255,0.1);
-  box-shadow: 0 0 15px rgba(255,255,255,0.05);
-  backdrop-filter: blur(6px);
-  transition: all 0.3s ease;
-}
-
-/* Hover glow effect */
-.oc-card:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 0 15px rgba(255,255,255,0.25);
-}
-
-/* OC image */
-.oc-card img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%; /* makes circular icons */
-  object-fit: cover;
-  border: 2px solid rgba(255,255,255,0.5);
-  box-shadow: 0 0 8px rgba(255,255,255,0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Image hover pop effect */
-.oc-card img:hover {
-  transform: scale(1.1) rotate(2deg);
-  box-shadow: 0 0 20px rgba(255,255,255,0.4);
-}
-
-/* OC info (name and description) */
-.oc-info h3 {
-  margin: 0;
-  font-size: 1.2rem;
-  color: #fff;
-  letter-spacing: 0.5px;
-  text-shadow: 0 0 5px rgba(255,255,255,0.2);
-}
-
-.oc-info p {
-  margin: 0.4rem 0 0;
-  font-size: 0.95rem;
-  color: #ccc;
-  line-height: 1.4;
-}
-
-/* Back button styling */
-.back-btn {
-  margin: 2rem 0;
-  padding: 0.6rem 1.4rem;
-  border: 1px solid #fff;
-  border-radius: 6px;
-  cursor: pointer;
-  color: #fff;
-  background: transparent;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  transition: all 0.3s ease;
-}
-
-.back-btn:hover {
-  background: #fff;
-  color: #111;
-  transform: scale(1.05);
-  box-shadow: 0 0 10px rgba(255,255,255,0.3);
-}
-
 
   /* ===== FRIENDS SECTION ===== */
   #friends {
     justify-content: flex-start;
     padding-top: 2rem;
-    overflow-y: auto; /* Makes the section scrollable vertically */
+    overflow-y: auto;
   }
 
   .friends-container {
@@ -196,10 +100,9 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding-bottom: 4rem; /* Extra padding so last card isn't cut off */
+    padding-bottom: 4rem;
   }
 
-  /* Individual friend card */
   .friend-card {
     background: #111;
     border-radius: 10px;
@@ -210,13 +113,11 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
-  /* Hover effect on card */
   .friend-card:hover {
     transform: scale(1.02);
     box-shadow: 0 5px 15px rgba(255,255,255,0.2);
   }
 
-  /* Profile image in card */
   .friend-card img {
     width: 60px;
     height: 60px;
@@ -225,7 +126,6 @@
     object-fit: cover;
   }
 
-  /* Friend info: name, bio, social link */
   .friend-info {
     flex: 1;
   }
@@ -278,9 +178,8 @@
   @media(max-width: 600px) {
     h1 { font-size: 2.2rem; }
     .bio { font-size: 1rem; }
-    .links a, .friends-btn { padding: 0.5rem 1rem; }
+    .links a, .friends-btn, .ocs-btn { padding: 0.5rem 1rem; }
   }
-
 </style>
 </head>
 <body>
@@ -288,49 +187,43 @@
 <!-- ===== HOME SECTION ===== -->
 <section id="home">
   <header>
-    <img src="https://cdn.discordapp.com/attachments/926830565259370556/1436578868277411841/5543E33C-00D5-4FB2-AE7F-65BC6FBC93C1.gif?ex=69101dd4&is=690ecc54&hm=9278bc9b1f8597a5ff74a27bb2a154b1a4ba69c4d23100c0381c617118ff44b4&" alt="Vinxlo" class="profile-pic">
+    <img src="https://cdn.discordapp.com/attachments/926830565259370556/1436578868277411841/5543E33C-00D5-4FB2-AE7F-65BC6FBC93C1.gif" alt="Vinxlo" class="profile-pic">
     <h1>Vinxlo</h1>
     <p class="bio">Digital artist | Animator</p>
   </header>
 
   <div class="links">
-    <!-- Social links -->
     <a href="https://instagram.com/_vinxlo" target="_blank">Instagram</a>
     <a href="https://twitter.com/vinxlo" target="_blank">Twitter</a>
     <a href="https://tiktok.com/@.vinxlo" target="_blank">TikTok</a>
     <a href="https://youtube.com/@vinxlo?si=7WTfuh0a2pwa-iTV" target="_blank">YouTube</a>
 
-    <!-- Button to show Friends section -->
     <button class="friends-btn" onclick="showFriends()">Friends</button>
     <button class="ocs-btn" onclick="showOCs()">OCs</button>
   </div>
 
-  <footer>
-    67 ! heh 😏 oh my days im so funny
-  </footer>
-  
+  <footer>67 ! heh 😏 oh my days im so funny</footer>
 </section>
 
 <!-- ===== FRIENDS SECTION ===== -->
 <section id="friends" class="hidden">
   <h2>Friends</h2>
   <div class="friends-container">
-    <!-- ===== EXAMPLE FRIENDS ===== -->
+
     <div class="friend-card">
-      <!-- Profile image links to social media -->
       <a href="https://instagram.com/markshroom2424" target="_blank">
-        <img src="https://markshroom24.carrd.co/assets/images/image01.jpg?v=a40c6b41" alt=".">
+        <img src="https://markshroom24.carrd.co/assets/images/image01.jpg?v=a40c6b41" alt="Mark">
       </a>
       <div class="friend-info">
         <h3>Mark!</h3>
-        <p>Artist and animator. hes so silly im going to EAT HIM.</p>
-        <a href="https://markshroom24.carrd.co/?fbclid=PAdGRleAN7knFleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAadfgIROcnnP5Qv3b7-rGnHh006yKgwSthUrVknbHB-HghxzY19ix1AM5bjMOg_aem_kYhAT_H6c-nKEd1Nd33oZw" target="_blank">View Profile</a>
+        <p>Artist and animator. he's so silly im going to EAT HIM.</p>
+        <a href="https://markshroom24.carrd.co/" target="_blank">View Profile</a>
       </div>
     </div>
 
     <div class="friend-card">
       <a href="https://instagram.com/ollkorrektt" target="_blank">
-        <img src="https://i.pinimg.com/originals/b0/09/3d/b0093d2003225f4d8c5274f67a209ecb.jpg" alt="Friend 2">
+        <img src="https://i.pinimg.com/originals/b0/09/3d/b0093d2003225f4d8c5274f67a209ecb.jpg" alt="Mirko">
       </a>
       <div class="friend-info">
         <h3>Mirko!</h3>
@@ -341,61 +234,62 @@
 
     <div class="friend-card">
       <a href="https://instagram.com/qu2_ncy" target="_blank">
-        <img src="https://cdn.discordapp.com/attachments/926830565259370556/1436558692492509289/IMG_5917.png?ex=69100b0a&is=690eb98a&hm=56490b789e6a281b3928d14095fece5dd39f562f010964f7e73ea877d548b618&" alt="Friend 3">
+        <img src="https://cdn.discordapp.com/attachments/926830565259370556/1436558692492509289/IMG_5917.png" alt="Quincy">
       </a>
       <div class="friend-info">
         <h3>Quincy!</h3>
-        <p> He doesn't do art but he is my best buddy so im going to EAT HIM.</p>
+        <p>He doesn't do art but he is my best buddy so im going to EAT HIM.</p>
         <a href="https://instagram.com/qu2_ncy" target="_blank">View Profile</a>
       </div>
     </div>
-    
-   <div class="friend-card">
+
+    <div class="friend-card">
       <a href="https://instagram.com/toothcomf" target="_blank">
-        <img src="https://shapes.inc/api/public/avatar/looey-r3fi" alt="Friend 3">
+        <img src="https://shapes.inc/api/public/avatar/looey-r3fi" alt="Cal">
       </a>
       <div class="friend-info">
         <h3>Cal!</h3>
-        <p> He he plays diddys world with me and he is epic 10/10 im going to EAT HIM.</p>
-        <a href="https://toothcomb.straw.page/?fbclid=PAdGRleAN7nWZleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAad5H6ktKi_lks1D8in8ZD2lAECFR_a0z5wRUJJkV9bJ1KtYP7TWwy05u1eR4A_aem_zI4ZUXUrxIv118qfTozA8Q" target="_blank">View Profile</a>
+        <p>He plays Diddy's World with me and he is epic 10/10 im going to EAT HIM.</p>
+        <a href="https://toothcomb.straw.page/" target="_blank">View Profile</a>
       </div>
     </div>
-    <!-- Add more friends here up to 10, following same pattern -->
   </div>
 
-  <!-- Back button to return to Home -->
+  <button class="back-btn" onclick="showHome()">Back</button>
+</section>
+
+<!-- ===== PLACEHOLDER OCS SECTION ===== -->
+<section id="ocs" class="hidden">
+  <h2>OCs</h2>
+  <p style="margin-top: 2rem;">Coming soon... your OC cards will go here!</p>
   <button class="back-btn" onclick="showHome()">Back</button>
 </section>
 
 <!-- ===== JAVASCRIPT FOR SECTION SWITCH ===== -->
 <script>
-  // Get the main sections
   const homeSection = document.getElementById('home');
   const friendsSection = document.getElementById('friends');
-  const ocsSection = document.getElementById('ocs'); // added OCs section
+  const ocsSection = document.getElementById('ocs');
 
-  // Function to show Friends section
   function showFriends() {
     homeSection.classList.add('hidden');
-    ocsSection.classList.add('hidden');
+    if (ocsSection) ocsSection.classList.add('hidden');
     friendsSection.classList.remove('hidden');
   }
 
-  // Function to show OCs section
   function showOCs() {
     homeSection.classList.add('hidden');
     friendsSection.classList.add('hidden');
-    ocsSection.classList.remove('hidden');
+    if (ocsSection) ocsSection.classList.remove('hidden');
   }
 
-  // Function to go back Home
   function showHome() {
     friendsSection.classList.add('hidden');
-    ocsSection.classList.add('hidden');
+    if (ocsSection) ocsSection.classList.add('hidden');
     homeSection.classList.remove('hidden');
   }
 
-  // ===== OPTIONAL: RANDOM FOOTER MESSAGE =====
+  // ===== RANDOM FOOTER MESSAGE =====
   const messages = [
     "67 😏",
     "I feel so sigma",
@@ -405,12 +299,11 @@
     "hi"
   ];
 
-  // Randomize message
-  const randomIndex = Math.floor(Math.random() * messages.length);
   const footer = document.querySelector("footer");
-  if (footer) footer.textContent = messages[randomIndex];
+  if (footer) {
+    const randomIndex = Math.floor(Math.random() * messages.length);
+    footer.textContent = messages[randomIndex];
+  }
 </script>
-
-
 </body>
 </html>
