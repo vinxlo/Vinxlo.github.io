@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vinxlo's OCs</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { background:#f3e8ff; color:#333; font-family:Arial,sans-serif; }
+    nav { background:#9b5de5; text-align:center; padding:10px; }
+    nav a { color:white; margin:0 15px; text-decoration:none; font-weight:bold; }
+    nav a:hover { text-decoration:underline; }
+
+    section { max-width:800px; margin:40px auto; padding:20px; text-align:center; }
+    section h2 { color:#6a0dad; margin-bottom:20px; }
+
+    .card-container { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
+    .card { background:#e0c3fc; border-radius:15px; box-shadow:0 4px 8px rgba(0,0,0,0.1); padding:20px; width:200px; transition:transform 0.3s, box-shadow 0.3s; }
+    .card:hover { transform:translateY(-5px); box-shadow:0 8px 16px rgba(0,0,0,0.2); }
+    .card img { width:100px; height:100px; border-radius:50%; margin-bottom:10px; }
+
+    footer { background:#9b5de5; color:white; text-align:center; padding:30px 20px; }
+    a.social-link { color:white; margin:0 10px; text-decoration:none; }
+    a.social-link:hover { text-decoration:underline; }
+
+    @media(max-width:600px) { .card-container { flex-direction:column; align-items:center; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="ocs.html">OCs</a>
+    <a href="friends.html">Friends</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section id="ocs">
+    <h2>My OCs</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="oc1.jpg" alt="OC 1">
+        <h3>(Text here)</h3>
+        <p>(Text here)</p>
+      </div>
+      <div class="card">
+        <img src="oc2.jpg" alt="OC 2">
+        <h3>(Text here)</h3>
+        <p>(Text here)</p>
+      </div>
+      <!-- Add more placeholder OCs here -->
+    </div>
+  </section>
+
+  <footer>
+    <h2>Contact & Socials</h2>
+    <p>Email: <a href="mailto:vinxlo@example.com">(Text here)</a></p>
+    <p>
+      Follow me: 
+      <a class="social-link" href="#" target="_blank">(Text here)</a> | 
+      <a class="social-link" href="#" target="_blank">(Text here)</a> | 
+      <a class="social-link" href="#" target="_blank">(Text here)</a>
+    </p>
+    <p>© 2025 Vinxlo's Portfolio</p>
+  </footer>
+</body>
+</html>
