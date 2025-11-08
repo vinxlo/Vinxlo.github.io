@@ -1,106 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vinxlo / Art</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vinxlo / Art</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- INTERNAL CSS -->
-  <style>
-    /* ===== GENERAL PAGE STYLING ===== */
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: #000; /* Dark background */
-      color: #fff;      /* White text */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;     /* Full screen height */
-      margin: 0;
-    }
+<!-- INTERNAL CSS -->
+<style>
+  /* ===== GENERAL PAGE STYLING ===== */
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: #000; /* Dark background */
+    color: #fff;      /* White text */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    position: relative;
+  }
 
-    /* ===== HERO / NAME ===== */
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-      text-align: center;
-    }
+  /* Each section fills screen and can be hidden */
+  section {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+  }
 
-    .bio {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-      text-align: center;
-      color: #ccc; /* lighter gray for bio */
-    }
+  /* Hidden sections (Friends by default) */
+  section.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
 
-    /* ===== SOCIAL LINKS ===== */
-    .links a {
-      display: block;
-      margin: 0.5rem 0;
-      padding: 0.6rem 1.2rem;
-      text-align: center;
-      font-weight: 500;
-      color: #fff;
-      text-decoration: none;
-      border: 1px solid #fff;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-    }
+  /* ===== HOME SECTION ===== */
+  #home header {
+    margin-top: 4rem;
+    text-align: center;
+  }
 
-    .links a:hover {
-      background: #fff; /* Button background on hover */
-      color: #111;      /* Text color on hover */
-      transform: scale(1.05); /* Slight pop effect */
-      box-shadow: 0 5px 15px rgba(255,255,255,0.2); /* subtle glow */
-    }
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
 
-    /* ===== FOOTER ===== */
-    footer {
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      color: #666;
-      text-align: center;
-    }
+  .bio {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #ccc;
+  }
 
-    /* ===== RESPONSIVE DESIGN ===== */
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2.2rem;
-      }
-      .bio {
-        font-size: 1rem;
-      }
-      .links a {
-        padding: 0.5rem 1rem;
-      }
-    }
-  </style>
+  /* Social links and Friends button */
+  .links a, .friends-btn {
+    display: block;
+    margin: 0.5rem 0;
+    padding: 0.6rem 1.2rem;
+    text-align: center;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .links a:hover, .friends-btn:hover {
+    background: #fff;
+    color: #111;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255,255,255,0.2);
+  }
+
+  /* ===== FRIENDS SECTION ===== */
+  #friends {
+    justify-content: flex-start;
+    padding-top: 2rem;
+    overflow-y: auto; /* Makes the section scrollable vertically */
+  }
+
+  .friends-container {
+    width: 90%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 4rem; /* Extra padding so last card isn't cut off */
+  }
+
+  /* Individual friend card */
+  .friend-card {
+    background: #111;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Hover effect on card */
+  .friend-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(255,255,255,0.2);
+  }
+
+  /* Profile image in card */
+  .friend-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    object-fit: cover;
+  }
+
+  /* Friend info: name, bio, social link */
+  .friend-info {
+    flex: 1;
+  }
+
+  .friend-info h3 {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+
+  .friend-info p {
+    margin: 0.3rem 0 0 0;
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+
+  .friend-info a {
+    color: #fff;
+    text-decoration: underline;
+    font-size: 0.9rem;
+  }
+
+  /* Back button */
+  .back-btn {
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    border: 1px solid #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #fff;
+    background: transparent;
+    transition: 0.3s;
+  }
+
+  .back-btn:hover {
+    background: #fff;
+    color: #111;
+    transform: scale(1.05);
+  }
+
+  /* Footer */
+  footer {
+    position: absolute;
+    bottom: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+  }
+
+  /* Responsive design */
+  @media(max-width: 600px) {
+    h1 { font-size: 2.2rem; }
+    .bio { font-size: 1rem; }
+    .links a, .friends-btn { padding: 0.5rem 1rem; }
+  }
+
+</style>
 </head>
-
 <body>
 
-  <!-- HERO / NAME SECTION -->
+<!-- ===== HOME SECTION ===== -->
+<section id="home">
   <header>
     <h1>Vinxlo</h1>
     <p class="bio">Digital artist | Animator</p>
   </header>
 
-  <!-- SOCIAL LINKS -->
   <div class="links">
+    <!-- Social links -->
     <a href="https://instagram.com/_vinxlo" target="_blank">Instagram</a>
     <a href="https://twitter.com/vinxlo" target="_blank">Twitter</a>
     <a href="https://tiktok.com/@.vinxlo" target="_blank">TikTok</a>
     <a href="https://youtube.com/@vinxlo?si=7WTfuh0a2pwa-iTV" target="_blank">YouTube</a>
+
+    <!-- Button to show Friends section -->
+    <button class="friends-btn" onclick="showFriends()">Friends</button>
   </div>
 
-  <!-- FOOTER -->
   <footer>
     67 ! heh 😏
   </footer>
+</section>
+
+<!-- ===== FRIENDS SECTION ===== -->
+<section id="friends" class="hidden">
+  <h2>Friends</h2>
+  <div class="friends-container">
+    <!-- ===== EXAMPLE FRIENDS ===== -->
+    <div class="friend-card">
+      <!-- Profile image links to social media -->
+      <a href="https://instagram.com/friend1" target="_blank">
+        <img src="https://via.placeholder.com/60" alt="Friend 1">
+      </a>
+      <div class="friend-info">
+        <h3>Friend 1</h3>
+        <p>Artist and animator. Loves digital sketches and gifs.</p>
+        <a href="https://instagram.com/friend1" target="_blank">View Profile</a>
+      </div>
+    </div>
+
+    <div class="friend-card">
+      <a href="https://instagram.com/friend2" target="_blank">
+        <img src="https://via.placeholder.com/60" alt="Friend 2">
+      </a>
+      <div class="friend-info">
+        <h3>Friend 2</h3>
+        <p>Illustrator and character designer.</p>
+        <a href="https://instagram.com/friend2" target="_blank">View Profile</a>
+      </div>
+    </div>
+
+    <div class="friend-card">
+      <a href="https://instagram.com/friend3" target="_blank">
+        <img src="https://via.placeholder.com/60" alt="Friend 3">
+      </a>
+      <div class="friend-info">
+        <h3>Friend 3</h3>
+        <p>3D modeler and animator.</p>
+        <a href="https://instagram.com/friend3" target="_blank">View Profile</a>
+      </div>
+    </div>
+
+    <!-- Add more friends here up to 10, following same pattern -->
+  </div>
+
+  <!-- Back button to return to Home -->
+  <button class="back-btn" onclick="showHome()">Back</button>
+</section>
+
+<!-- ===== JAVASCRIPT FOR SECTION SWITCH ===== -->
+<script>
+  const homeSection = document.getElementById('home');
+  const friendsSection = document.getElementById('friends');
+
+  // Show Friends section
+  function showFriends() {
+    homeSection.classList.add('hidden');
+    friendsSection.classList.remove('hidden');
+  }
+
+  // Return to Home section
+  function showHome() {
+    friendsSection.classList.add('hidden');
+    homeSection.classList.remove('hidden');
+  }
+</script>
 
 </body>
 </html>
