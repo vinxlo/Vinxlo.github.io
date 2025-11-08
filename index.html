@@ -8,137 +8,139 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-  body {
-    font-family: 'Montserrat', sans-serif;
-    background: #000;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    position: relative;
-  }
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #000;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  position: relative;
+}
 
-  .profile-pic {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 1rem;
-    border: 2px solid #fff;
-  }
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 2px solid #fff;
+}
 
-  section {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-  }
+section {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  overflow-y: auto;
+  padding-top: 2rem;
+}
 
-  section.hidden {
-    opacity: 0;
-    visibility: hidden;
-  }
+section.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
 
-  h1 { font-size: 3rem; margin-bottom: 0.5rem; }
-  .bio { font-size: 1.2rem; margin-bottom: 2rem; color: #ccc; }
+h1 { font-size: 3rem; margin-bottom: 0.5rem; }
+.bio { font-size: 1.2rem; margin-bottom: 2rem; color: #ccc; }
 
-  .links a, .friends-btn, .ocs-btn {
-    display: block;
-    margin: 0.5rem 0;
-    padding: 0.6rem 1.2rem;
-    text-align: center;
-    font-weight: 500;
-    color: #fff;
-    text-decoration: none;
-    background: transparent;
-    border: 1px solid #fff;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-  }
+.links a, .friends-btn, .ocs-btn {
+  display: block;
+  margin: 0.5rem 0;
+  padding: 0.6rem 1.2rem;
+  text-align: center;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
 
-  .links a:hover, .friends-btn:hover, .ocs-btn:hover {
-    background: #fff;
-    color: #111;
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(255,255,255,0.2);
-  }
+.links a:hover, .friends-btn:hover, .ocs-btn:hover {
+  background: #fff;
+  color: #111;
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255,255,255,0.2);
+}
 
-  .friends-container, .ocs-container {
-    width: 90%;
-    max-width: 600px;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding-bottom: 4rem;
-  }
+.friends-container, .ocs-container {
+  width: 90%;
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-bottom: 4rem;
+}
 
-  .friend-card, .oc-card {
-    background: #111;
-    border-radius: 10px;
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+.friend-card, .oc-card {
+  background: #111;
+  border-radius: 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-  .friend-card:hover, .oc-card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 5px 15px rgba(255,255,255,0.2);
-  }
+.friend-card:hover, .oc-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(255,255,255,0.2);
+}
 
-  .friend-card img, .oc-card img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    cursor: pointer;
-    object-fit: cover;
-  }
+.friend-card img, .oc-card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  object-fit: cover;
+}
 
-  .friend-info, .oc-info {
-    flex: 1;
-  }
+.friend-info, .oc-info {
+  flex: 1;
+}
 
-  .friend-info h3, .oc-info h3 { margin: 0; font-size: 1.1rem; }
-  .friend-info p, .oc-info p { margin: 0.3rem 0 0 0; font-size: 0.9rem; color: #ccc; }
-  .friend-info a, .oc-info a { color: #fff; text-decoration: underline; font-size: 0.9rem; }
+.friend-info h3, .oc-info h3 { margin: 0; font-size: 1.1rem; }
+.friend-info p, .oc-info p { margin: 0.3rem 0 0 0; font-size: 0.9rem; color: #ccc; }
+.friend-info a, .oc-info a { color: #fff; text-decoration: underline; font-size: 0.9rem; }
 
-  .back-btn {
-    margin: 1rem 0;
-    padding: 0.5rem 1rem;
-    border: 1px solid #fff;
-    border-radius: 6px;
-    cursor: pointer;
-    color: #fff;
-    background: transparent;
-    transition: 0.3s;
-  }
+.back-btn {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #fff;
+  background: transparent;
+  transition: 0.3s;
+}
 
-  .back-btn:hover {
-    background: #fff;
-    color: #111;
-    transform: scale(1.05);
-  }
+.back-btn:hover {
+  background: #fff;
+  color: #111;
+  transform: scale(1.05);
+}
 
-  footer {
-    position: absolute;
-    bottom: 1rem;
-    font-size: 0.9rem;
-    color: #666;
-    text-align: center;
-  }
+footer {
+  position: absolute;
+  bottom: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+}
 
-  @media(max-width: 600px) {
-    h1 { font-size: 2.2rem; }
-    .bio { font-size: 1rem; }
-    .links a, .friends-btn, .ocs-btn { padding: 0.5rem 1rem; }
-  }
+@media(max-width: 600px) {
+  h1 { font-size: 2.2rem; }
+  .bio { font-size: 1rem; }
+  .links a, .friends-btn, .ocs-btn { padding: 0.5rem 1rem; }
+}
 </style>
 </head>
 <body>
@@ -166,7 +168,6 @@
 <section id="friends" class="hidden">
   <h2>Friends</h2>
   <div class="friends-container">
-    <!-- Example Friend Card -->
     <div class="friend-card">
       <a href="https://instagram.com/markshroom2424" target="_blank">
         <img src="https://markshroom24.carrd.co/assets/images/image01.jpg?v=a40c6b41" alt="Mark">
@@ -175,6 +176,39 @@
         <h3>Mark!</h3>
         <p>Artist and animator. he's so silly im going to EAT HIM.</p>
         <a href="https://markshroom24.carrd.co/" target="_blank">View Profile</a>
+      </div>
+    </div>
+
+    <div class="friend-card">
+      <a href="https://instagram.com/ollkorrektt" target="_blank">
+        <img src="https://i.pinimg.com/originals/b0/09/3d/b0093d2003225f4d8c5274f67a209ecb.jpg" alt="Mirko">
+      </a>
+      <div class="friend-info">
+        <h3>Mirko!</h3>
+        <p>He makes really cool art and is insanely talented i'm going to EAT HIM.</p>
+        <a href="https://instagram.com/ollkorrektt" target="_blank">View Profile</a>
+      </div>
+    </div>
+
+    <div class="friend-card">
+      <a href="https://instagram.com/qu2_ncy" target="_blank">
+        <img src="https://cdn.discordapp.com/attachments/926830565259370556/1436675267375403008/IMG_5922.png" alt="Quincy">
+      </a>
+      <div class="friend-info">
+        <h3>Quincy!</h3>
+        <p>He wanted this stupid yaoi image i made as a joke as his pfp so i want to KILL HIM</p>
+        <a href="https://instagram.com/qu2_ncy" target="_blank">View Profile</a>
+      </div>
+    </div>
+
+    <div class="friend-card">
+      <a href="https://instagram.com/toothcomf" target="_blank">
+        <img src="https://shapes.inc/api/public/avatar/looey-r3fi" alt="Cal">
+      </a>
+      <div class="friend-info">
+        <h3>Cal!</h3>
+        <p>He plays Diddy's World with me and he is epic 10/10 im going to EAT HIM.</p>
+        <a href="https://toothcomb.straw.page/" target="_blank">View Profile</a>
       </div>
     </div>
   </div>
@@ -194,48 +228,59 @@
         <a href="https://toyhou.se/26865455.august" target="_blank">View Profile</a>
       </div>
     </div>
+
+    <div class="oc-card">
+      <a href="https://toyhou.se/26865604.edward" target="_blank">
+        <img src="https://f2.toyhou.se/file/f2-toyhou-se/characters/26865604?1718471648" alt="Edward">
+      </a>
+      <div class="oc-info">
+        <h3>Edward</h3>
+        <p>Silly clock man!! he is good friends with August!!</p>
+        <a href="https://toyhou.se/26865604.edward" target="_blank">View Profile</a>
+      </div>
+    </div>
   </div>
   <button class="back-btn" onclick="showHome()">Back</button>
 </section>
 
 <script>
-  const homeSection = document.getElementById('home');
-  const friendsSection = document.getElementById('friends');
-  const ocsSection = document.getElementById('ocs');
+const homeSection = document.getElementById('home');
+const friendsSection = document.getElementById('friends');
+const ocsSection = document.getElementById('ocs');
 
-  function showFriends() {
-    homeSection.classList.add('hidden');
-    friendsSection.classList.remove('hidden');
-    ocsSection.classList.add('hidden');
-  }
+function showFriends() {
+  homeSection.classList.add('hidden');
+  friendsSection.classList.remove('hidden');
+  ocsSection.classList.add('hidden');
+}
 
-  function showOCs() {
-    homeSection.classList.add('hidden');
-    friendsSection.classList.add('hidden');
-    ocsSection.classList.remove('hidden');
-  }
+function showOCs() {
+  homeSection.classList.add('hidden');
+  friendsSection.classList.add('hidden');
+  ocsSection.classList.remove('hidden');
+}
 
-  function showHome() {
-    friendsSection.classList.add('hidden');
-    ocsSection.classList.add('hidden');
-    homeSection.classList.remove('hidden');
-  }
+function showHome() {
+  friendsSection.classList.add('hidden');
+  ocsSection.classList.add('hidden');
+  homeSection.classList.remove('hidden');
+}
 
-  const messages = [
-    "67 😏",
-    "I feel so sigma",
-    "Barbeque chicken alert",
-    "why are you running? WHY ARE YOU RUNNING?",
-    "i love my ocs pls draw my ocs",
-    "hi",
-    "Who made this mess? YOU DID KING! 😫"
-  ];
+const messages = [
+  "67 😏",
+  "I feel so sigma",
+  "Barbeque chicken alert",
+  "why are you running? WHY ARE YOU RUNNING?",
+  "i love my ocs pls draw my ocs",
+  "hi",
+  "Who made this mess? YOU DID KING! 😫"
+];
 
-  const footer = document.querySelector("footer");
-  if (footer) {
-    const randomIndex = Math.floor(Math.random() * messages.length);
-    footer.textContent = messages[randomIndex];
-  }
+const footer = document.querySelector("footer");
+if (footer) {
+  const randomIndex = Math.floor(Math.random() * messages.length);
+  footer.textContent = messages[randomIndex];
+}
 </script>
 </body>
 </html>
