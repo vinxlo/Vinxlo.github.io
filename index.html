@@ -5,12 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vinxlo / Art</title>
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
-<!-- INTERNAL CSS -->
 <style>
-  /* ===== GENERAL PAGE STYLING ===== */
   body {
     font-family: 'Montserrat', sans-serif;
     background: #000;
@@ -47,24 +44,9 @@
     visibility: hidden;
   }
 
-  /* ===== HOME SECTION ===== */
-  #home header {
-    margin-top: 4rem;
-    text-align: center;
-  }
+  h1 { font-size: 3rem; margin-bottom: 0.5rem; }
+  .bio { font-size: 1.2rem; margin-bottom: 2rem; color: #ccc; }
 
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .bio {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    color: #ccc;
-  }
-
-  /* Buttons + Links */
   .links a, .friends-btn, .ocs-btn {
     display: block;
     margin: 0.5rem 0;
@@ -87,14 +69,7 @@
     box-shadow: 0 5px 15px rgba(255,255,255,0.2);
   }
 
-  /* ===== FRIENDS SECTION ===== */
-  #friends {
-    justify-content: flex-start;
-    padding-top: 2rem;
-    overflow-y: auto;
-  }
-
-  .friends-container {
+  .friends-container, .ocs-container {
     width: 90%;
     max-width: 600px;
     display: flex;
@@ -103,7 +78,7 @@
     padding-bottom: 4rem;
   }
 
-  .friend-card {
+  .friend-card, .oc-card {
     background: #111;
     border-radius: 10px;
     display: flex;
@@ -113,12 +88,12 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
-  .friend-card:hover {
+  .friend-card:hover, .oc-card:hover {
     transform: scale(1.02);
     box-shadow: 0 5px 15px rgba(255,255,255,0.2);
   }
 
-  .friend-card img {
+  .friend-card img, .oc-card img {
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -126,28 +101,14 @@
     object-fit: cover;
   }
 
-  .friend-info {
+  .friend-info, .oc-info {
     flex: 1;
   }
 
-  .friend-info h3 {
-    margin: 0;
-    font-size: 1.1rem;
-  }
+  .friend-info h3, .oc-info h3 { margin: 0; font-size: 1.1rem; }
+  .friend-info p, .oc-info p { margin: 0.3rem 0 0 0; font-size: 0.9rem; color: #ccc; }
+  .friend-info a, .oc-info a { color: #fff; text-decoration: underline; font-size: 0.9rem; }
 
-  .friend-info p {
-    margin: 0.3rem 0 0 0;
-    font-size: 0.9rem;
-    color: #ccc;
-  }
-
-  .friend-info a {
-    color: #fff;
-    text-decoration: underline;
-    font-size: 0.9rem;
-  }
-
-  /* Back button */
   .back-btn {
     margin: 1rem 0;
     padding: 0.5rem 1rem;
@@ -165,7 +126,6 @@
     transform: scale(1.05);
   }
 
-  /* Footer */
   footer {
     position: absolute;
     bottom: 1rem;
@@ -174,7 +134,6 @@
     text-align: center;
   }
 
-  /* Responsive design */
   @media(max-width: 600px) {
     h1 { font-size: 2.2rem; }
     .bio { font-size: 1rem; }
@@ -184,7 +143,6 @@
 </head>
 <body>
 
-<!-- ===== HOME SECTION ===== -->
 <section id="home">
   <header>
     <img src="https://cdn.discordapp.com/attachments/926830565259370556/1436578868277411841/5543E33C-00D5-4FB2-AE7F-65BC6FBC93C1.gif" alt="Vinxlo" class="profile-pic">
@@ -202,14 +160,13 @@
     <button class="ocs-btn" onclick="showOCs()">OCs</button>
   </div>
 
- 
+  <footer></footer>
 </section>
 
-<!-- ===== FRIENDS SECTION ===== -->
 <section id="friends" class="hidden">
   <h2>Friends</h2>
   <div class="friends-container">
-
+    <!-- Example Friend Card -->
     <div class="friend-card">
       <a href="https://instagram.com/markshroom2424" target="_blank">
         <img src="https://markshroom24.carrd.co/assets/images/image01.jpg?v=a40c6b41" alt="Mark">
@@ -220,83 +177,27 @@
         <a href="https://markshroom24.carrd.co/" target="_blank">View Profile</a>
       </div>
     </div>
-
-    <div class="friend-card">
-      <a href="https://instagram.com/ollkorrektt" target="_blank">
-        <img src="https://i.pinimg.com/originals/b0/09/3d/b0093d2003225f4d8c5274f67a209ecb.jpg" alt="Mirko">
-      </a>
-      <div class="friend-info">
-        <h3>Mirko!</h3>
-        <p>He makes really cool art and is insanely talented i'm going to EAT HIM.</p>
-        <a href="https://instagram.com/ollkorrektt" target="_blank">View Profile</a>
-      </div>
-    </div>
-
-    <div class="friend-card">
-      <a href="https://instagram.com/qu2_ncy" target="_blank">
-        <img src="https://cdn.discordapp.com/attachments/926830565259370556/1436675267375403008/IMG_5922.png?ex=6910779b&is=690f261b&hm=18828343cff29f5452064095003d3463a4dbe405ee57746ddb5b8f99ab9c9b52&" alt="Quincy">
-      </a>
-      <div class="friend-info">
-        <h3>Quincy!</h3>
-        <p>He wanted this stupid yaoi image i made as a joke as his pfp so i want to KILL HIM</p>
-        <a href="https://instagram.com/qu2_ncy" target="_blank">View Profile</a>
-      </div>
-    </div>
-
-    <div class="friend-card">
-      <a href="https://instagram.com/toothcomf" target="_blank">
-        <img src="https://shapes.inc/api/public/avatar/looey-r3fi" alt="Cal">
-      </a>
-      <div class="friend-info">
-        <h3>Cal!</h3>
-        <p>He plays Diddy's World with me and he is epic 10/10 im going to EAT HIM.</p>
-        <a href="https://toothcomb.straw.page/" target="_blank">View Profile</a>
-      </div>
-    </div>
   </div>
-
   <button class="back-btn" onclick="showHome()">Back</button>
 </section>
 
-<!-- ===== OCS SECTION ===== -->
 <section id="ocs" class="hidden">
   <h2>OCs</h2>
-
   <div class="ocs-container">
-    <!-- ===== EXAMPLE OC 1 ===== -->
     <div class="oc-card">
-      <!-- OC image links to toyhouse or social media -->
       <a href="https://toyhou.se/26865455.august" target="_blank">
-        <img src="https://f2.toyhou.se/file/f2-toyhou-se/characters/26865455?1718471682" alt="OC 1">
+        <img src="https://f2.toyhou.se/file/f2-toyhou-se/characters/26865455?1718471682" alt="August">
       </a>
       <div class="oc-info">
         <h3>August</h3>
-        <p>My main oc!</p>
+        <p>My main OC!</p>
         <a href="https://toyhou.se/26865455.august" target="_blank">View Profile</a>
       </div>
     </div>
-
-    <!-- ===== EXAMPLE OC 2 ===== -->
-    <div class="oc-card">
-      <a href="https://toyhou.se/26865604.edward" target="_blank">
-        <img src="https://f2.toyhou.se/file/f2-toyhou-se/characters/26865604?1718471648" alt="OC 2">
-      </a>
-      <div class="oc-info">
-        <h3>Edward</h3>
-        <p>Silly clock man!! he is good friends with August!!</p>
-        <a href="https://toyhou.se/26865604.edward" target="_blank">View Profile</a>
-      </div>
-    </div>
-
-    <!-- You can add up to 10 OCs like this -->
   </div>
-
-  <!-- Back button to return to Home -->
   <button class="back-btn" onclick="showHome()">Back</button>
 </section>
 
-
-<!-- ===== JAVASCRIPT FOR SECTION SWITCH ===== -->
 <script>
   const homeSection = document.getElementById('home');
   const friendsSection = document.getElementById('friends');
@@ -304,30 +205,29 @@
 
   function showFriends() {
     homeSection.classList.add('hidden');
-    if (ocsSection) ocsSection.classList.add('hidden');
     friendsSection.classList.remove('hidden');
+    ocsSection.classList.add('hidden');
   }
 
   function showOCs() {
     homeSection.classList.add('hidden');
     friendsSection.classList.add('hidden');
-    if (ocsSection) ocsSection.classList.remove('hidden');
+    ocsSection.classList.remove('hidden');
   }
 
   function showHome() {
     friendsSection.classList.add('hidden');
-    if (ocsSection) ocsSection.classList.add('hidden');
+    ocsSection.classList.add('hidden');
     homeSection.classList.remove('hidden');
   }
 
-  // ===== RANDOM FOOTER MESSAGE =====
   const messages = [
     "67 😏",
     "I feel so sigma",
     "Barbeque chicken alert",
     "why are you running? WHY ARE YOU RUNNING?",
     "i love my ocs pls draw my ocs",
-    "hi"
+    "hi",
     "Who made this mess? YOU DID KING! 😫"
   ];
 
