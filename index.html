@@ -4,32 +4,103 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vinxlo / Art</title>
+
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
 
+  <!-- INTERNAL CSS -->
+  <style>
+    /* ===== GENERAL PAGE STYLING ===== */
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #111; /* Dark background */
+      color: #fff;      /* White text */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;     /* Full screen height */
+      margin: 0;
+    }
+
+    /* ===== HERO / NAME ===== */
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .bio {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: #ccc; /* lighter gray for bio */
+    }
+
+    /* ===== SOCIAL LINKS ===== */
+    .links a {
+      display: block;
+      margin: 0.5rem 0;
+      padding: 0.6rem 1.2rem;
+      text-align: center;
+      font-weight: 500;
+      color: #fff;
+      text-decoration: none;
+      border: 1px solid #fff;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .links a:hover {
+      background: #fff; /* Button background on hover */
+      color: #111;      /* Text color on hover */
+      transform: scale(1.05); /* Slight pop effect */
+      box-shadow: 0 5px 15px rgba(255,255,255,0.2); /* subtle glow */
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #666;
+      text-align: center;
+    }
+
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+      .bio {
+        font-size: 1rem;
+      }
+      .links a {
+        padding: 0.5rem 1rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-  <!-- =====================
-       HERO / NAME SECTION
-       This is the top part where you introduce yourself
-  ====================== -->
+  <!-- HERO / NAME SECTION -->
   <header>
-    <h1>Vinxlo</h1> <!-- Change this to your name or art handle -->
-    <p class="bio">Digital artist | Animator</p> <!-- Short bio, optional -->
+    <h1>Vinxlo</h1>
+    <p class="bio">Digital artist | Animator</p>
   </header>
 
-  <!-- =====================
-       SOCIAL LINKS / BUTTONS
-       Add your social media links here
-  ====================== -->
+  <!-- SOCIAL LINKS -->
   <div class="links">
-    <!-- Replace # with your social media URLs -->
     <a href="https://instagram.com/_vinxlo" target="_blank">Instagram</a>
     <a href="https://twitter.com/vinxlo" target="_blank">Twitter</a>
     <a href="https://tiktok.com/@.vinxlo" target="_blank">TikTok</a>
     <a href="https://youtube.com/@vinxlo?si=7WTfuh0a2pwa-iTV" target="_blank">YouTube</a>
   </div>
 
-  
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2025 Vinxlo. All rights reserved.
+  </footer>
+
+</body>
+</html>
