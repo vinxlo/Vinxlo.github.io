@@ -369,30 +369,48 @@
 
 <!-- ===== JAVASCRIPT FOR SECTION SWITCH ===== -->
 <script>
+  // Get the main sections
   const homeSection = document.getElementById('home');
   const friendsSection = document.getElementById('friends');
+  const ocsSection = document.getElementById('ocs'); // added OCs section
 
-  // Show Friends section
+  // Function to show Friends section
   function showFriends() {
     homeSection.classList.add('hidden');
+    ocsSection.classList.add('hidden');
     friendsSection.classList.remove('hidden');
   }
 
-const ocsSection = document.getElementById('ocs');
+  // Function to show OCs section
+  function showOCs() {
+    homeSection.classList.add('hidden');
+    friendsSection.classList.add('hidden');
+    ocsSection.classList.remove('hidden');
+  }
 
-function showOCs() {
-  homeSection.classList.add('hidden');
-  friendsSection.classList.add('hidden');
-  ocsSection.classList.remove('hidden');
-}
-
-
-  // Return to Home section
+  // Function to go back Home
   function showHome() {
     friendsSection.classList.add('hidden');
+    ocsSection.classList.add('hidden');
     homeSection.classList.remove('hidden');
   }
+
+  // ===== OPTIONAL: RANDOM FOOTER MESSAGE =====
+  const messages = [
+    "67 😏",
+    "I feel so sigma",
+    "Barbeque chicken alert",
+    "why are you running? WHY ARE YOU RUNNING?",
+    "i love my ocs pls draw my ocs",
+    "hi"
+  ];
+
+  // Randomize message
+  const randomIndex = Math.floor(Math.random() * messages.length);
+  const footer = document.querySelector("footer");
+  if (footer) footer.textContent = messages[randomIndex];
 </script>
+
 
 </body>
 </html>
