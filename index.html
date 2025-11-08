@@ -378,6 +378,15 @@
     friendsSection.classList.remove('hidden');
   }
 
+const ocsSection = document.getElementById('ocs');
+
+function showOCs() {
+  homeSection.classList.add('hidden');
+  friendsSection.classList.add('hidden');
+  ocsSection.classList.remove('hidden');
+}
+
+
   // Return to Home section
   function showHome() {
     friendsSection.classList.add('hidden');
